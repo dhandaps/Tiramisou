@@ -12,5 +12,17 @@
     	<version>1.5_r4</version>
     	<scope>provided</scope>
   	</dependency>
+  	<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>lombok-maven</artifactId>
+  		<version>0.9.3.1</version>
+  		<type>pom</type>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>maven-lombok-plugin</artifactId>
+  		<version>0.9.3.1</version>
+  		<type>maven-plugin</type>
+  	</dependency>
   </dependencies>
 </project>
