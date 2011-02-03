@@ -1,55 +1,24 @@
 package com.amazon.hackday.trms.adapters;
 
-import android.database.DataSetObserver;
+import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
+import android.widget.ArrayAdapter;
 
-public class NotificationListAdapter implements ListAdapter {
+import com.amazon.hackday.trms.model.SellerNotification;
+
+public class NotificationListAdapter extends ArrayAdapter {
+	@Getter @Setter private List<SellerNotification> notifications;
 	
-	public boolean areAllItemsEnabled() {
-		return false;
+	public NotificationListAdapter(Context context, int textViewResourceId) {
+		super(context, textViewResourceId);
 	}
-
-	public boolean isEnabled(int arg0) {
-		return true;
-	}
-
-	public int getCount() {
-		return 0;
-	}
-
-	public Object getItem(int arg0) {
+	
+	public View getView(int index, View arg1, ViewGroup arg2) {
 		return null;
-	}
-
-	public long getItemId(int arg0) {
-		return 0;
-	}
-
-	public int getItemViewType(int arg0) {
-		return 0;
-	}
-
-	public View getView(int arg0, View arg1, ViewGroup arg2) {
-		return null;
-	}
-
-	public int getViewTypeCount() {
-		return 0;
-	}
-
-	public boolean hasStableIds() {
-		return false;
-	}
-
-	public boolean isEmpty() {
-		return false;
-	}
-
-	public void registerDataSetObserver(DataSetObserver arg0) {
-	}
-
-	public void unregisterDataSetObserver(DataSetObserver arg0) {
 	}
 }
