@@ -9,6 +9,5 @@ import lombok.Data;
 	private long id;
 	private boolean acknowledged;
 	private String title;
-	private String detail;
 	private int imageId;
 }
