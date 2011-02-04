@@ -6,10 +6,14 @@ import java.util.concurrent.Executors;
 import android.app.ListActivity;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.amazon.hackday.trms.adapters.SellerNotificationAdapter;
+import com.amazon.hackday.trms.eventHandlers.StartIntentClickHandler;
 import com.amazon.hackday.trms.model.SellerNotification;
 import com.amazon.hackday.trms.model.SellerNotificationFactory;
 import com.amazon.hackday.trms.model.SellerNotificationType;
@@ -29,7 +33,14 @@ public class MainMenu extends ListActivity {
         
         this.factory = new SellerNotificationFactory(getNotificationService(), this);
         this.adapter = new SellerNotificationAdapter(this, R.layout.notification_view);
-
+        
+        View shipButton = (View)findViewById(R.id.main_List);
+        View listButton = (View)findViewById(R.id.main_Ship);
+        Intent shipIntent = new Intent(this, ShipConfirmActivity.class);
+        Intent listIntent = new Intent(this, CreateListingActivity.class);
+        shipButton.setOnClickListener(new StartIntentClickHandler(this, shipIntent));
+        listButton.setOnClickListener(new StartIntentClickHandler(this, listIntent));
+        
         spawnNotifications();
         setListAdapter(adapter);        
     }

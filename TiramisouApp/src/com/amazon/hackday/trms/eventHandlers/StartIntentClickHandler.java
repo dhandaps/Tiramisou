@@ -1,15 +1,15 @@
-package com.amazon.hackday.trms.adapters;
+package com.amazon.hackday.trms.eventHandlers;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class NotificationClickHandler implements OnClickListener
+public class StartIntentClickHandler implements OnClickListener
 {
 	private final Context context;
 	private Intent intent;
-	public NotificationClickHandler(Context context, Intent intent) {
+	public StartIntentClickHandler(Context context, Intent intent) {
 		this.context = context;
 		this.intent = intent;
 	}

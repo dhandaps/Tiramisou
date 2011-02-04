@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amazon.hackday.trms.R;
+import com.amazon.hackday.trms.eventHandlers.DismissNotificationHandler;
+import com.amazon.hackday.trms.eventHandlers.StartIntentClickHandler;
 import com.amazon.hackday.trms.model.SellerNotification;
 
 public class SellerNotificationAdapter extends ArrayAdapter<SellerNotification> {
@@ -40,7 +42,7 @@ public class SellerNotificationAdapter extends ArrayAdapter<SellerNotification> 
 		detail.setText(notification.getDetail());		
 		image.setImageResource(notification.getImageId());
 		checkedImage.setOnClickListener(new DismissNotificationHandler(this, notification));
-		view.setOnClickListener(new NotificationClickHandler(getContext(), notification.getClickIntent()));
+		view.setOnClickListener(new StartIntentClickHandler(getContext(), notification.getClickIntent()));
         return view;
 	}
 }

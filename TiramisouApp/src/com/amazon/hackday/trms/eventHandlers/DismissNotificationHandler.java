@@ -1,8 +1,9 @@
-package com.amazon.hackday.trms.adapters;
+package com.amazon.hackday.trms.eventHandlers;
 
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.amazon.hackday.trms.adapters.SellerNotificationAdapter;
 import com.amazon.hackday.trms.model.SellerNotification;
 
 public class DismissNotificationHandler implements OnClickListener 
