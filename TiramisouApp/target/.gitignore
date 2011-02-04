@@ -1,3 +1,5 @@
 *.jar
 *class*
 *_
+generated-sources
+maven-archiver
