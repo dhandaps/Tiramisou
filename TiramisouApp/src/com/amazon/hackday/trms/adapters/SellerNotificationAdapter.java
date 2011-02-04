@@ -35,11 +35,12 @@ public class SellerNotificationAdapter extends ArrayAdapter<SellerNotification> 
 		TextView text = (TextView) view.findViewById(R.id.notificationText);
 		TextView detail = (TextView) view.findViewById(R.id.notificationDetail);
 		ImageView image = (ImageView) view.findViewById(R.id.notificationImage);
-
+		ImageView checkedImage = (ImageView)view.findViewById(R.id.notificationDismissedImage);
 		text.setText(notification.getTitle());
-		detail.setText(notification.getDetail());
+		detail.setText(notification.getDetail());		
 		image.setImageResource(notification.getImageId());
-
+		checkedImage.setOnClickListener(new DismissNotificationHandler(this, notification));
+		view.setOnClickListener(new NotificationClickHandler(getContext(), notification.getClickIntent()));
         return view;
 	}
 }
