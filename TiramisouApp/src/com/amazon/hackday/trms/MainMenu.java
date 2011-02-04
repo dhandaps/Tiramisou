@@ -33,10 +33,10 @@ public class MainMenu extends ListActivity {
         this.factory = new SellerNotificationFactory(getNotificationService(), this);
         this.adapter = new SellerNotificationAdapter(this, R.layout.notification_view);
         
-        View shipButton = (View)findViewById(R.id.main_List);
-        View listButton = (View)findViewById(R.id.main_Ship);
+        View shipButton = (View)findViewById(R.id.main_Ship);
+        View listButton = (View)findViewById(R.id.main_List);
         Intent shipIntent = new Intent(this, ShipConfirmActivity.class);
-        Intent listIntent = new Intent(this, CreateListingActivity.class);
+        Intent listIntent = new Intent(this, FindAsinActivity.class);
         shipButton.setOnClickListener(new StartIntentClickHandler(this, shipIntent));
         listButton.setOnClickListener(new StartIntentClickHandler(this, listIntent));
         
