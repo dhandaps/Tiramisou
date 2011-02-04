@@ -94,7 +94,6 @@ public class SellerNotificationFactory
 	
 	private void systemNotify(SellerNotification sellerNotification)
 	{
-		/*
 		int icon = R.drawable.message;
 		CharSequence text = sellerNotification.getTitle();
 		long when = System.currentTimeMillis();
@@ -106,7 +105,6 @@ public class SellerNotificationFactory
 		CharSequence title = sellerNotification.getTitle();
 		notification.setLatestEventInfo(context, title, title, pendingIntent);
 		notificationManager.notify(sellerNotification.getNotificationTag(), notification);
-		*/
 	}
 	
 	/***
