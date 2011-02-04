@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:background="#FFFFFF">
+	android:layout_height="fill_parent" android:background="#C0C0C0">
 
 	<RelativeLayout  
 				android:layout_width="fill_parent" 
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content" 
+                android:background="#ffffff"
+                android:paddingBottom="5dp"
+        >
 		<ImageView android:layout_width="wrap_content"
-			android:layout_height="wrap_content" 
-			android:id="@+id/amazonshipcamera"
-			android:layout_marginLeft="10dip" android:layout_marginTop="10dip" android:src="@drawable/as_camera"			
-			android:scaleType="fitXY"  />
+			android:layout_height="wrap_content" android:id="@+id/amazonshipcamera"
+			android:layout_x="10dp" android:layout_y="10dp" android:src="@drawable/as_camera"			
+			android:scaleType="fitXY" android:gravity="right"  />
 		<TextView 
 			android:text="Nikon D90 12.3MP Digital SLR Camera"  
 			android:layout_width="wrap_content" 
-			android:textColor="@color/listingHeader" 
+			android:textColor="#000000" 
 			android:layout_height="wrap_content" 
-			android:textSize="13sp" 
+			android:textSize="15dp" 
 			android:textStyle="bold"
 			android:layout_toRightOf="@id/amazonshipcamera" 
 			android:layout_alignBottom="@id/amazonshipcamera"
-			android:paddingLeft="10dip"
+			android:paddingLeft="10dp"
 			/>			
 	</RelativeLayout>								
 	
@@ -28,39 +30,52 @@
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
     	android:stretchColumns="1"
-    	android:paddingTop="10px" >
-    	<TableRow>
+    	android:background="#000046">
+    	<TableRow android:layout_margin="3dp" >
+    	</TableRow>
+    	<TableRow android:layout_margin="2dp" >
+		    <TextView    
+		               android:text="What's my fee?" 
+		               android:layout_height="wrap_content"    
+		               android:textSize="10dip"    
+		               android:layout_width="fill_parent"  
+		               android:textColor="#ffffff"  
+		               android:textStyle="bold" 
+		    /> 
+    	</TableRow>    	
+    	<TableRow android:layout_margin="2dp" android:background="#ffffff">
 		  	<TextView    
 		               android:text="Item Price"
-		               android:textStyle="bold"
 		               android:layout_height="wrap_content"    
-		               android:textSize="12sp" 
+		               android:textSize="10dip"    
 		               android:layout_width="fill_parent"   
 		               android:textColor="#000000" 
 		               android:id="@+id/AmazonShipItemPrice"
+		               android:textStyle="bold"  
 		    /> 
   			<EditText android:id="@+id/editItemPrice" 
               android:layout_width="fill_parent" 
               android:layout_height="wrap_content" 
-              android:background="#ffffff"
+              android:background="#f7Df73"
               android:text="200.00"
               android:textSize="10dip" 
-              android:width="50dip"
 			  android:gravity="right"
+			  android:textStyle="bold" 
+			  android:padding="6dip" 
             />	
     	</TableRow>
-    	<TableRow android:background="#C0C0C0">
+    	<TableRow android:layout_margin="2dp">
 		    <TextView    
 		               android:text="Amazon Fees" 
 		               android:layout_height="wrap_content"    
 		               android:textSize="10dip"    
 		               android:layout_width="fill_parent"  
-		               android:textColor="#000000"
+		               android:textColor="#ffffff"
 		               android:id="@+id/AmazonShipAmazonFees"  
 		               android:textStyle="bold"
 		    /> 
     	</TableRow>    	
-    	<TableRow>
+    	<TableRow android:layout_margin="2dp" android:background="#ffffff">
    			<TextView    
                android:text="Referral Fee: 8%" 
                android:layout_height="wrap_content"    
@@ -68,88 +83,33 @@
                android:layout_width="fill_parent"    
                android:id="@+id/AmazonShipReferralFee"  
                android:textColor="#000000"
+               android:textStyle="bold"  
     		/> 
         	<TextView
+        	        android:layout_width="fill_parent" 
+              		android:layout_height="wrap_content" 
            		 	android:text="value"
 	            	android:gravity="right"
-	            	android:padding="3dip" 
+	            	android:padding="6dip"
+	            	android:textSize="10dip" 
 	            	android:textColor="#000000"
 	            	android:id="@+id/editReferralFee" 
+	            	android:textStyle="bold"  
 	         />
     	</TableRow> 
-    	<TableRow android:background="#C0C0C0" >
+    	<TableRow android:layout_margin="2dp" >
    			<TextView    
                android:text="Fulfillment by Amazon Fees" 
                android:textStyle="bold" 
                android:layout_height="wrap_content"    
                android:textSize="10dip"    
                android:layout_width="fill_parent"    
-               android:textColor="#000000"
+               android:textColor="#ffffff"
     		/> 
      	</TableRow> 
-	   	<TableRow>
+	   	<TableRow android:layout_margin="2dp" android:background="#ffffff">
 	   		<TextView    
 	               android:text="Order Handling"    
-	               android:layout_height="wrap_content"    
-	               android:textSize="10dip"    
-	               android:layout_width="fill_parent"   
-	               android:textColor="#000000" 
-	    	/> 
-	        <TextView
-	           		android:text="($1.00)"
-	           		android:gravity="right"	            
-		            android:padding="3dip" 
-		            android:textColor="#000000"
-		     />
-	    </TableRow>
-	   	<TableRow android:background="#C0C0C0">
-	   		<TextView    
-	               android:text="Pick and Pack"    
-	               android:layout_height="wrap_content"    
-	               android:textSize="10dip"    
-	               android:layout_width="fill_parent"   
-	               android:textColor="#000000"  
-	    	/> 
-	        <TextView
-	           		android:text="($1.00)"
-	           		android:gravity="right"	            
-		            android:padding="3dip" 
-		            android:textColor="#000000"
-		     />
-	    </TableRow>	
-	   	<TableRow>
-	   		<TextView    
-	               android:text="Weight Handling"    
-	               android:layout_height="wrap_content"    
-	               android:textSize="10dip"    
-	               android:layout_width="fill_parent"   
-	               android:textColor="#000000" 
-	    	/> 
-	        <TextView
-	           		android:text="($0.40)"
-	           		android:gravity="right"	            
-		            android:padding="3dip" 
-		            android:textColor="#000000"
-		     />
-	    </TableRow>
-	   	<TableRow android:background="#C0C0C0">
-	   		<TextView    
-	               android:text="30 Day Storage*"    
-	               android:layout_height="wrap_content"    
-	               android:textSize="10dip"    
-	               android:layout_width="fill_parent"   
-	               android:textColor="#000000"   
-	    	/> 
-	        <TextView
-	           		android:text="($0.03)"
-	           		android:gravity="right"	            
-		            android:padding="3dip" 
-		            android:textColor="#000000"
-		     />
-	    </TableRow>
-	   	<TableRow>
-	   		<TextView    
-	               android:text="Net amount credited to you"    
 	               android:layout_height="wrap_content"    
 	               android:textSize="10dip"    
 	               android:layout_width="fill_parent"   
@@ -157,10 +117,89 @@
 	               android:textStyle="bold"  
 	    	/> 
 	        <TextView
+        	        android:layout_width="fill_parent" 
+              		android:layout_height="wrap_content" 	        
 	           		android:text="($1.00)"
 	           		android:gravity="right"	            
-		            android:padding="3dip" 
+		            android:padding="5dip" 
 		            android:textColor="#000000"
+		            android:textStyle="bold"  
+		     />
+	    </TableRow>
+	   	<TableRow android:layout_margin="2dp" android:background="#ffffff">
+	   		<TextView    
+	               android:text="Pick and Pack"    
+	               android:layout_height="wrap_content"    
+	               android:textSize="10dip"    
+	               android:layout_width="fill_parent"   
+	               android:textColor="#000000"  
+	               android:textStyle="bold"  
+	    	/> 
+	        <TextView
+        	        android:layout_width="fill_parent" 
+              		android:layout_height="wrap_content" 	        
+	           		android:text="($1.00)"
+	           		android:gravity="right"	            
+		            android:padding="5dip" 
+		            android:textColor="#000000"
+		            android:textStyle="bold"  
+		     />
+	    </TableRow>	
+	   	<TableRow android:layout_margin="2dp" android:background="#ffffff">
+	   		<TextView    
+	               android:text="Weight Handling"    
+	               android:layout_height="wrap_content"    
+	               android:textSize="10dip"    
+	               android:layout_width="fill_parent"   
+	               android:textColor="#000000"
+	               android:textStyle="bold"   
+	    	/> 
+	        <TextView
+        	        android:layout_width="fill_parent" 
+              		android:layout_height="wrap_content" 	        
+	           		android:text="($0.40)"
+	           		android:gravity="right"	            
+		            android:padding="5dip" 
+		            android:textColor="#000000"
+		            android:textStyle="bold"  
+		     />
+	    </TableRow>
+	   	<TableRow android:layout_margin="2dp" android:background="#ffffff">
+	   		<TextView    
+	               android:text="30 Day Storage*"    
+	               android:layout_height="wrap_content"    
+	               android:textSize="10dip"    
+	               android:layout_width="fill_parent"   
+	               android:textColor="#000000"  
+	               android:textStyle="bold"   
+	    	/> 
+	        <TextView
+        	        android:layout_width="fill_parent" 
+              		android:layout_height="wrap_content" 	        
+	           		android:text="($0.03)"
+	           		android:gravity="right"	            
+		            android:padding="5dip" 
+		            android:textColor="#000000"
+		            android:textStyle="bold"  
+		     />
+	    </TableRow>
+	   	<TableRow android:layout_margin="2dp">
+	   		<TextView    
+	               android:text="Net amount credited to you"    
+	               android:layout_height="wrap_content"    
+	               android:textSize="10dip"    
+	               android:layout_width="fill_parent"   
+	               android:textColor="#ffffff" 
+	               android:textStyle="bold"  
+	    	/> 
+	        <TextView
+        	        android:layout_width="fill_parent" 
+              		android:layout_height="wrap_content" 	        
+	           		android:text="($1.00)"
+	           		android:gravity="right"	            
+		            android:padding="5dip"
+		            android:textStyle="bold"   
+		            android:textColor="#ffffff"
 		            android:id="@+id/editNetAmount" 
 		     />
 	    </TableRow>	 	    	        
@@ -169,7 +208,6 @@
 	<RelativeLayout  
 			android:layout_width="fill_parent" 
             android:layout_height="fill_parent"
-            android:paddingBottom="15dip"
         >
 		<ImageView 
 			android:layout_width="wrap_content"
@@ -178,7 +216,7 @@
 			android:src="@drawable/as_calculate"			
 			android:scaleType="fitXY"  
 			android:layout_alignParentBottom="true"
-			android:paddingLeft="50dip"
+			android:paddingLeft="15dip"
 			android:paddingRight="15dip"
 		/>             
 		<ImageView 
