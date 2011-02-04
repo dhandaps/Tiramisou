@@ -36,7 +36,7 @@ public class MainMenu extends ListActivity {
         View shipButton = (View)findViewById(R.id.main_Ship);
         View listButton = (View)findViewById(R.id.main_List);
         Intent shipIntent = new Intent(this, ShipConfirmActivity.class);
-        Intent listIntent = new Intent(this, FindAsinCameraActivity.class);
+        Intent listIntent = new Intent(this, FindAsinActivity.class);
         shipButton.setOnClickListener(new StartIntentClickHandler(this, shipIntent));
         listButton.setOnClickListener(new StartIntentClickHandler(this, listIntent));
         
