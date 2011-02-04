@@ -2,7 +2,6 @@ package com.amazon.hackday.trms.model;
 
 import java.util.Random;
 
-import lombok.SneakyThrows;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -30,7 +29,6 @@ public class SellerNotificationFactory
 		this.context = Preconditions.checkNotNull(context);
 	}
 	
-	@SneakyThrows
 	public SellerNotification createNotification(SellerNotificationType notificationType, Object context)
 	{
 		String title = null;
@@ -85,7 +83,12 @@ public class SellerNotificationFactory
 		}
 		
 		Log.i(TAG, String.format("Creating Notification of type %s with context %s", notificationType, context));
-	    Thread.sleep(100 + random.nextInt(MAX_PERIOD));
+		try{
+			Thread.sleep(100 + random.nextInt(MAX_PERIOD));
+		}
+		catch(InterruptedException ex){
+			throw new RuntimeException(ex);
+		}
 	    
 		SellerNotification notification = new SellerNotification(++LAST_ID, imageId, notificationTag, title, intent);
 		systemNotify(notification);
