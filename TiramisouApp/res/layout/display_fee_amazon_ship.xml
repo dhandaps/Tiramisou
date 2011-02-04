@@ -7,19 +7,20 @@
 				android:layout_width="fill_parent" 
                 android:layout_height="wrap_content" >
 		<ImageView android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:id="@+id/amazonshipcamera"
-			android:layout_x="10px" android:layout_y="10px" android:src="@drawable/as_camera"			
-			android:scaleType="fitXY" android:gravity="right"  />
+			android:layout_height="wrap_content" 
+			android:id="@+id/amazonshipcamera"
+			android:layout_marginLeft="10dip" android:layout_marginTop="10dip" android:src="@drawable/as_camera"			
+			android:scaleType="fitXY"  />
 		<TextView 
 			android:text="Nikon D90 12.3MP Digital SLR Camera"  
 			android:layout_width="wrap_content" 
-			android:textColor="#3f2a29" 
+			android:textColor="@color/listingHeader" 
 			android:layout_height="wrap_content" 
-			android:textSize="15px" 
+			android:textSize="13sp" 
 			android:textStyle="bold"
 			android:layout_toRightOf="@id/amazonshipcamera" 
 			android:layout_alignBottom="@id/amazonshipcamera"
-			android:paddingLeft="10px"
+			android:paddingLeft="10dip"
 			/>			
 	</RelativeLayout>								
 	
@@ -31,8 +32,9 @@
     	<TableRow>
 		  	<TextView    
 		               android:text="Item Price"
+		               android:textStyle="bold"
 		               android:layout_height="wrap_content"    
-		               android:textSize="10dip"    
+		               android:textSize="12sp" 
 		               android:layout_width="fill_parent"   
 		               android:textColor="#000000" 
 		               android:id="@+id/AmazonShipItemPrice"
@@ -167,6 +169,7 @@
 	<RelativeLayout  
 			android:layout_width="fill_parent" 
             android:layout_height="fill_parent"
+            android:paddingBottom="15dip"
         >
 		<ImageView 
 			android:layout_width="wrap_content"
@@ -175,7 +178,7 @@
 			android:src="@drawable/as_calculate"			
 			android:scaleType="fitXY"  
 			android:layout_alignParentBottom="true"
-			android:paddingLeft="15dip"
+			android:paddingLeft="50dip"
 			android:paddingRight="15dip"
 		/>             
 		<ImageView 

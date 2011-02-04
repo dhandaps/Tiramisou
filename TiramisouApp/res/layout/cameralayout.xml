@@ -4,21 +4,24 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="Take a picture of the bar code"
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:text="Shoot the Bar Code!"
+		android:layout_gravity="center"
 		android:textSize="24sp" />
 
-<view 
+	<view 
 		class="com.amazon.hackday.trms.Preview"
 		android:id="@+id/preview"
 		android:layout_weight="1" android:layout_width="fill_parent"
-		android:layout_height="fill_parent">></view>
-<!--  	<FrameLayout android:id="@+id/preview"
-		android:layout_weight="1" android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
-	</FrameLayout>-->
+		android:layout_height="fill_parent"></view>
 
-	<Button android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:id="@+id/buttonClick"
-		android:text="Take picture" android:layout_gravity="center"></Button>
+	<ImageView
+		android:id="@+id/camera_takePicture"
+		android:src="@drawable/camera_icon"
+		android:scaleType="fitXY"
+		android:layout_height="50dip"
+		android:layout_width="50dip"
+		android:layout_gravity="center">
+	</ImageView>
 </LinearLayout>

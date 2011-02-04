@@ -17,8 +17,7 @@
 			android:layout_toRightOf="@id/youshipcamera" android:layout_alignBottom="@id/youshipcamera"
 			android:paddingLeft="10dip"
 			/>			
-	</RelativeLayout>	
-										
+	</RelativeLayout>											
 	
 	<TableLayout 
     	android:layout_width="fill_parent"
@@ -28,7 +27,8 @@
 		  	<TextView    
 		               android:text="Item Price"
 		               android:layout_height="wrap_content"    
-		               android:textSize="10dip"    
+		               android:textSize="13sp"
+		               android:textStyle="bold"    
 		               android:layout_width="fill_parent"   
 		               android:textColor="#000000" 
 		               android:id="@+id/YouShipItemPrice"
@@ -128,25 +128,26 @@
 	    </TableRow>		    
     </TableLayout>    
     
-	<RelativeLayout  
-			android:layout_width="wrap_content" 
+    <RelativeLayout  
+			android:layout_width="fill_parent" 
             android:layout_height="fill_parent"
+            android:paddingBottom="15dip"
         >
 		<ImageView 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" 
 			android:id="@+id/youshipcalculate"
-			android:src="@drawable/ys_calculate"			
+			android:src="@drawable/as_calculate"			
 			android:scaleType="fitXY"  
 			android:layout_alignParentBottom="true"
-			android:paddingLeft="15dip"
-			android:paddingRight="15dip"			
+			android:paddingLeft="50dip"
+			android:paddingRight="15dip"
 		/>             
 		<ImageView 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" 
 			android:id="@+id/youshipcreateListing"
-			android:src="@drawable/ys_sellnow"			
+			android:src="@drawable/as_sellnow"			
 			android:scaleType="fitXY" 
 			android:layout_toRightOf="@id/youshipcalculate"
 			android:layout_alignParentBottom="true"
@@ -156,14 +157,13 @@
 		<ImageView 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" 
-			android:id="@+id/youshipstartOver"
-			android:src="@drawable/ys_startover"			
+			android:id="@+id/youshipstartover"
+			android:src="@drawable/as_startover"			
 			android:scaleType="fitXY" 
 			android:layout_toRightOf="@id/youshipcreateListing"
 			android:layout_alignParentBottom="true"
 			android:paddingLeft="15dip"
 			android:paddingRight="15dip"			
 		/> 					
-	</RelativeLayout>    
-    
+	</RelativeLayout>       
 </LinearLayout>

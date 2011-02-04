@@ -33,16 +33,33 @@
 	android:layout_alignRight="@+id/main_Ship">
 </TextView>
 	
-<Button 
+<ImageView
 	android:text="@string/list_label" 
 	android:id="@+id/main_List"
+	android:src="@drawable/money_bag_icon"
 	android:layout_toRightOf="@+id/main_Ship"
 	android:layout_marginTop="70dip" 
-	android:layout_marginLeft="20dip"
+	android:layout_marginLeft="25dip"
 	android:layout_marginRight="20dip"
 	android:layout_height="80dip" 
-	android:layout_width="130dip">
-</Button>	
+	android:layout_width="100dip"
+	android:scaleType="fitXY"
+	android:clickable="true">
+</ImageView>	
+
+<TextView 
+	android:text="@string/list_label" 
+	android:typeface="sans"
+	android:textSize="16sp"
+	android:textColor="@color/black"
+	android:layout_width="wrap_content" 
+	android:id="@+id/main_ListLabel"
+	android:layout_marginLeft="15dip"
+	android:layout_height="wrap_content" 
+	android:layout_below="@+id/main_List" 
+	android:layout_alignLeft="@+id/main_List" 
+	android:layout_alignRight="@+id/main_List">
+</TextView>
 
 <android:ListView 
 	android:id="@android:id/list" 

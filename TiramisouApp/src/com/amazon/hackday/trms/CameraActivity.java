@@ -48,7 +48,7 @@ public class CameraActivity extends Activity {
         
         //mCamera=new Camera();
         
-        buttonClick = (Button) findViewById(R.id.buttonClick);
+        buttonClick = (Button) findViewById(R.id.camera_takePicture);
         preview = (Preview) findViewById(R.id.preview); 
 		buttonClick.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {

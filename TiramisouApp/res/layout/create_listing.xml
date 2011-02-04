@@ -12,7 +12,5 @@
 		android:textSize="15px" 
 		android:textStyle="bold"
 		android:id="@+id/FindProduct"
-	/>	
-
- 
+	/>	 
 </RelativeLayout>	
