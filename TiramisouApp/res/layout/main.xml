@@ -29,9 +29,23 @@
 
 <android:ListView 
 	android:id="@android:id/list" 
+	android:background="@drawable/texture"
 	android:layout_height="fill_parent" 
 	android:layout_width="fill_parent"
 	android:layout_marginTop="30dip"
 	android:layout_below="@+id/main_Ship"
-	android:cacheColorHint="#00000000"/>
+	android:cacheColorHint="@color/nope"/>
+
+<android:TextView
+	android:id="@android:id/empty"
+	android:text="@string/no_notifications"
+	android:textColor="@color/light"
+	android:textSize="13pt"
+	android:layout_below="@+id/main_Ship"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_marginLeft="45dip"
+	android:layout_marginTop="140dip"
+/>
+
 </RelativeLayout>

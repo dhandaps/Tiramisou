@@ -26,8 +26,8 @@ public class MainMenu extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);                   
-        setListAdapter(createListAdapter());   
+        setContentView(R.layout.main);       
+        setListAdapter(createListAdapter());        
     }
     
     public ListAdapter createListAdapter(){
