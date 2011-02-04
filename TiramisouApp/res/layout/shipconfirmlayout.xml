@@ -5,8 +5,57 @@
     android:layout_height="fill_parent"
     >
        <TextView android:text="Confirm shipment" android:id="@+id/textView1" android:textColor="#000000" android:layout_height="wrap_content" android:layout_width="fill_parent"></TextView>
-       <Button android:id="@+id/retakepicture" android:textSize="14px" android:layout_height="55px" android:text="Retake picture" android:layout_width="100px"></Button>
-       <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout1" android:layout_height="wrap_content">
-           <Button android:id="@+id/confirmshipment" android:textSize="14px" android:layout_height="55px" android:text="Confirm" android:layout_width="100px"></Button>
-       </LinearLayout>  
+
+	<LinearLayout android:id="@+id/linearLayout1" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50px">
+       <TextView
+        android:text="Carrier"
+        android:textSize="10pt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+       <EditText
+        android:id="@+id/carrier"
+        android:text="UPS"
+        android:textSize="10pt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    </LinearLayout>
+    
+<!--     <LinearLayout android:id="@+id/linearLayout2" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="75px"> -->
+    <TextView
+        android:text="Tracking number"
+        android:textSize="10pt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <EditText
+        android:id="@+id/trackingnumber"
+        android:text="A1234567890B"
+        android:textSize="10pt"
+        android:layout_width="fill_parent"
+        android:layout_height="55px"
+        android:layout_weight="1"/>
+    <!--</LinearLayout>-->
+    
+    <!--<LinearLayout android:id="@+id/linearLayout3" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50px">-->
+    <TextView
+        android:text="Order"
+        android:textSize="10pt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <EditText
+        android:id="@+id/order"
+        android:text="12345"
+        android:textSize="10pt"
+        android:layout_width="fill_parent"
+        android:layout_height="55px"
+        android:layout_weight="1"/>
+    <!--</LinearLayout>-->
+    
+    <LinearLayout android:id="@+id/linearLayout4" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50px">
+        <Button android:text="Retake picture" android:layout_height="50px" android:textSize="13px" android:id="@+id/retakepicture" android:layout_width="120px"></Button>
+        <Button android:text="Confirm" android:layout_height="50px" android:textSize="13px" android:id="@+id/confirmshipment" android:layout_width="120px"></Button>
+    </LinearLayout>  
 </LinearLayout>
