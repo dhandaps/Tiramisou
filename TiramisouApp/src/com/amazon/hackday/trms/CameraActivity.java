@@ -26,6 +26,7 @@ public class CameraActivity extends Activity {
 	int defaultCamera;
 	int numberOfCameras;
 	String nextPage;
+	static boolean done = false;
 	
 	public static byte[] getPicture(){
 		return picture;
@@ -99,6 +100,10 @@ public class CameraActivity extends Activity {
     
     protected void onResume() {
         super.onResume();
+        if (done){ // If the ship page set this
+        	done=false;
+        	finish();
+        }
 
         // Open the default i.e. the first rear facing camera.
         /*Camera camera = Camera.open();
