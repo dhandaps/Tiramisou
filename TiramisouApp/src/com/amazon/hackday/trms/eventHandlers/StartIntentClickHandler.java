@@ -8,8 +8,8 @@ import android.view.View.OnClickListener;
 public class StartIntentClickHandler implements OnClickListener
 {
 	private final Context context;
-	private Intent intent;
-	public StartIntentClickHandler(Context context, Intent intent) {
+	private final Intent intent;
+	public StartIntentClickHandler(Context context, Intent intent){
 		this.context = context;
 		this.intent = intent;
 	}

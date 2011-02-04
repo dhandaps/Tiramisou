@@ -9,7 +9,7 @@ import com.amazon.hackday.trms.model.SellerNotification;
 public class DismissNotificationHandler implements OnClickListener 
 {
 	private final SellerNotificationAdapter sellerNotificationAdapter;
-	private SellerNotification notification;
+	private final SellerNotification notification;
 	public DismissNotificationHandler(SellerNotificationAdapter sellerNotificationAdapter, SellerNotification notification){
 		this.sellerNotificationAdapter = sellerNotificationAdapter;
 		this.notification = notification;
