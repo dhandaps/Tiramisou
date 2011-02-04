@@ -9,7 +9,7 @@ import com.amazon.hackday.trms.eventHandlers.PictureDataCallback;
 import com.amazon.hackday.trms.eventHandlers.TakePictureHandler;
 
 public class CameraActivity extends Activity {
-	public String PICTURE_DATA_CALLBACK = "PictureDataCallback";
+	public static final String PICTURE_DATA_CALLBACK = "PictureDataCallback";
 	
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -19,7 +19,7 @@ public class CameraActivity extends Activity {
                        
         View shutterButton = (View) findViewById(R.id.camera_takePicture);
         Preview previewer = (Preview) findViewById(R.id.preview); 
-        PictureDataCallback pictureDataCallback = new PictureDataCallback(){
+        PictureDataCallback pictureDataCallback = new PictureDataCallback(){        	
 			public void picturePosted(byte[] pictureData) {
 				// Do nothing! HAHAHHA! IT's Hack Day!
 			}        	
@@ -27,10 +27,6 @@ public class CameraActivity extends Activity {
 
 		shutterButton.setOnClickListener(new TakePictureHandler(previewer, pictureDataCallback, this));
 	}
-	
-    protected void onPause() {
-        super.onPause();
-    }
 }
 
 

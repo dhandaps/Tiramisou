@@ -15,11 +15,15 @@ public class ShipConfirmActivity extends Activity {
 	
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
+	
+		final Activity me = this;		
+		Intent takePictureIntent = new Intent(me, CameraActivity.class);
+		startActivity(takePictureIntent);
 		
 		setContentView(R.layout.shipconfirmlayout);
-		final Activity me = this;
+
+
 		View takePicture = (View) findViewById(R.id.ship_takePicture);
-		Intent takePictureIntent = new Intent(me, CameraActivity.class);
 		takePicture.setOnClickListener(new StartIntentClickHandler(this, takePictureIntent));
 				
 		confirmShipment = (Button) findViewById(R.id.confirmshipment);

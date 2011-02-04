@@ -15,15 +15,18 @@ public class FindAsinActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.find_asin);
+
+        Intent takePictureIntent = new Intent(this, CameraActivity.class);
+		startActivity(takePictureIntent);
         
+        setContentView(R.layout.find_asin);
+
 		Button startover = (Button)findViewById(R.id.submit);
 		Intent intent = new Intent(this, DisplayFeeActivity.class);
 		OnClickListener submitClickListener = new StartIntentClickHandler(this, intent);    
 		startover.setOnClickListener(submitClickListener);
 		
 		View takePicture = (View) findViewById(R.id.ship_takePicture);
-		Intent takePictureIntent = new Intent(this, CameraActivity.class);
 		takePicture.setOnClickListener(new StartIntentClickHandler(this, takePictureIntent));		
     } 
 }
