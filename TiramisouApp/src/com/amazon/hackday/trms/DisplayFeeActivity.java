@@ -11,7 +11,7 @@ public class DisplayFeeActivity extends TabActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.display_fee);
-
+	    
 	    Resources res = getResources(); // Resource object to get Drawables
 	    TabHost tabHost = getTabHost();  // The activity TabHost
 	    TabHost.TabSpec spec;  // Resusable TabSpec for each tab
@@ -26,8 +26,7 @@ public class DisplayFeeActivity extends TabActivity {
 
 	    // Do the same for the other tabs
 	    intent = new Intent().setClass(this, DisplayFeeAmazonShipActivity.class);
-	    spec = tabHost.newTabSpec("AmazonShip").setIndicator("Amazon Ship")
-	                  .setContent(intent);
+	    spec = tabHost.newTabSpec("AmazonShip").setIndicator("Amazon Ships").setContent(intent);
 	    tabHost.addTab(spec);
 
 	    tabHost.setCurrentTab(2);
