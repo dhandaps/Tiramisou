@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent" 
+            android:layout_height="fill_parent" 
+            android:background="#FFFFFF"
+    >
+	<TextView 
+		android:text="Find Product"  
+		android:layout_width="wrap_content" 
+		android:textColor="#3f2a29" 
+		android:layout_height="wrap_content" 
+		android:textSize="15px" 
+		android:textStyle="bold"
+		android:id="@+id/FindProduct"
+	/>		
+	
+	<TextView
+		android:text="Enter UPC/ISBN Code"  
+		android:layout_width="wrap_content" 
+		android:textColor="#3f2a29" 
+		android:layout_height="wrap_content" 
+		android:textSize="10px" 
+		android:textStyle="bold"
+		android:layout_below="@id/FindProduct"	
+		android:paddingTop="20px"
+		android:id="@+id/EnterCode"
+	/>
+	
+  <EditText android:id="@+id/code" 
+              android:layout_width="fill_parent" 
+              android:layout_height="wrap_content" 
+              android:background="@android:drawable/editbox_background"
+              android:layout_below="@id/EnterCode" />	
+              
+	<Button 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:id="@+id/submit"
+			android:textSize="10px"
+			android:textStyle="bold"
+			android:text="Submit" 
+			android:height="10px"
+			android:layout_below="@id/code"	
+			android:layout_alignParentRight="true"
+			android:layout_marginLeft="10px" 
+	/> 
+</RelativeLayout>	

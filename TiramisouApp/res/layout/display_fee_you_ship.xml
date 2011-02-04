@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="#FFFFFF">
+
+	<RelativeLayout  
+				android:layout_width="fill_parent" 
+                android:layout_height="wrap_content" >
+		<ImageView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/youshipcamera"
+			android:layout_x="10dip" android:layout_y="10dip" android:src="@drawable/ys_camera"			
+			android:scaleType="fitXY" android:gravity="right"  />
+		<TextView 
+			android:text="Nikon D90 12.3MP Digital SLR Camera"  
+			android:layout_width="wrap_content" android:textColor="#3f2a29" 
+			android:layout_height="wrap_content" android:textSize="15dip" android:textStyle="bold"
+			android:layout_toRightOf="@id/youshipcamera" android:layout_alignBottom="@id/youshipcamera"
+			android:paddingLeft="10dip"
+			/>			
+	</RelativeLayout>	
+										
+	
+	<TableLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:stretchColumns="1">
+    	<TableRow>
+		  	<TextView    
+		               android:text="Item Price"
+		               android:layout_height="wrap_content"    
+		               android:textSize="10dip"    
+		               android:layout_width="fill_parent"   
+		               android:textColor="#000000" 
+		               android:id="@+id/YouShipItemPrice"
+		    /> 
+  			<EditText android:id="@+id/ysEditItemPrice" 
+		              android:layout_width="fill_parent" 
+		              android:layout_height="wrap_content" 
+		              android:background="#ffffff"
+		              android:text="200.00"
+		              android:textSize="10dip" 
+		              android:width="20dip"
+					  android:gravity="right"
+					  android:padding="3dip" 
+            />	
+    	</TableRow>
+    	<TableRow android:background="#C0C0C0" >
+			<TextView    
+		               android:text="Std. Domestic Shipping Credit"    
+		               android:layout_height="wrap_content"    
+		               android:textSize="10dip"    
+		               android:layout_width="fill_parent"   
+		               android:textColor="#000000"  
+		               android:id="@+id/YouShipShippingCredit"
+		    /> 
+  			<EditText android:id="@+id/ysEditShippingCredit" 
+		              android:layout_width="fill_parent" 
+		              android:layout_height="wrap_content" 
+		              android:background="#C0C0C0"
+		              android:text="7.00"
+		              android:textSize="10dip" 
+		              android:width="20dip"
+					  android:gravity="right"
+					  android:padding="3dip" 
+            />	
+    	</TableRow>
+    	<TableRow>
+		    <TextView    
+		               android:text="Amazon Fees" 
+		               android:layout_height="wrap_content"    
+		               android:textSize="10dip"    
+		               android:layout_width="fill_parent"  
+		               android:textColor="#000000"  
+		               android:id="@+id/YouShipAmazonFees" 
+		               android:textStyle="bold" 
+		    /> 
+    	</TableRow>    	
+    	<TableRow android:background="#C0C0C0" >
+   			<TextView    
+               android:text="Referral Fee" 
+               android:layout_height="wrap_content"    
+               android:textSize="10dip"    
+               android:layout_width="fill_parent"    
+               android:textColor="#000000" 
+               android:id="@+id/YouShipReferralFee"  
+    		/> 
+        	<TextView
+           		 	android:text="value"
+	            	android:gravity="right"
+	            	android:padding="3dip" 
+	            	android:textColor="#000000"
+	            	android:id="@+id/ysEditReferralFee" 
+	         />
+    	</TableRow>     	
+ 
+	   	<TableRow >
+	   		<TextView    
+	               android:text="Outbound Shipping - Shipping Costs"    
+	               android:layout_height="wrap_content"    
+	               android:textSize="10dip"    
+	               android:layout_width="fill_parent"   
+	               android:textColor="#000000" 
+	               android:id="@+id/YouShipNetShipFees"  
+	    	/> 
+        	<TextView
+           		 	android:text="($0.00)"
+	            	android:gravity="right"
+	            	android:padding="3dip" 
+	            	android:textColor="#000000"
+	         />
+	    </TableRow>
+	   	<TableRow android:background="#C0C0C0">
+	   		<TextView    
+	               android:text="Net amount credited to you"    
+	               android:layout_height="wrap_content"    
+	               android:textSize="10dip"    
+	               android:layout_width="fill_parent"   
+	               android:textColor="#000000" 
+	               android:textStyle="bold"  
+	    	/> 
+	        <TextView
+	           		android:text="($1.00)"
+	           		android:gravity="right"	            
+		            android:padding="3dip" 
+		            android:textColor="#000000"
+		            android:id="@+id/ysEditNetAmount" 
+		     />
+	    </TableRow>		    
+    </TableLayout>    
+    
+	<RelativeLayout  
+			android:layout_width="wrap_content" 
+            android:layout_height="fill_parent"
+        >
+		<ImageView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:id="@+id/youshipcalculate"
+			android:src="@drawable/ys_calculate"			
+			android:scaleType="fitXY"  
+			android:layout_alignParentBottom="true"
+			android:paddingLeft="15dip"
+			android:paddingRight="15dip"			
+		/>             
+		<ImageView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:id="@+id/youshipcreateListing"
+			android:src="@drawable/ys_sellnow"			
+			android:scaleType="fitXY" 
+			android:layout_toRightOf="@id/youshipcalculate"
+			android:layout_alignParentBottom="true"
+			android:paddingLeft="15dip"
+			android:paddingRight="15dip"			
+		/>
+		<ImageView 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:id="@+id/youshipstartOver"
+			android:src="@drawable/ys_startover"			
+			android:scaleType="fitXY" 
+			android:layout_toRightOf="@id/youshipcreateListing"
+			android:layout_alignParentBottom="true"
+			android:paddingLeft="15dip"
+			android:paddingRight="15dip"			
+		/> 					
+	</RelativeLayout>    
+    
+</LinearLayout>
