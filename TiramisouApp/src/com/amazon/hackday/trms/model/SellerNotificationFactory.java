@@ -1,23 +1,16 @@
 package com.amazon.hackday.trms.model;
 
-import java.util.Random;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Intent;
 import android.content.Context;
-import android.util.Log;
+import android.content.Intent;
 
 import com.amazon.hackday.trms.R;
 import com.google.common.base.Preconditions;
 
 public class SellerNotificationFactory 
 {
-	private static final String TAG = "SellerNotificationFactory";
-	private static final int MAX_PERIOD = 10000;
-	private static final int MIN_PERIOD = 2000;
-	private static final Random random = new Random();	
 	private static long LAST_ID = 0;
 	
 	private final NotificationManager notificationManager;
@@ -25,9 +18,9 @@ public class SellerNotificationFactory
 	private final Intent defaultIntent;
 	
 	public SellerNotificationFactory(NotificationManager notificationManager, Context context, Intent defaultIntent){
-		this.defaultIntent = defaultIntent;
-		this.notificationManager = Preconditions.checkNotNull(notificationManager);
-		this.context = Preconditions.checkNotNull(context);
+		this.defaultIntent = Preconditions.checkNotNull(defaultIntent, "Default Intent must not be null");
+		this.notificationManager = Preconditions.checkNotNull(notificationManager, "Notification Manager must not be null");
+		this.context = Preconditions.checkNotNull(context, "Context must not be null");
 	}
 	
 	public SellerNotification createNotification(SellerNotificationType notificationType, String context)
@@ -57,12 +50,12 @@ public class SellerNotificationFactory
 			break;
 			case BUY_BOX_WON:
 				title = "Buy Box Won!";
-				detail = String.format("You have won the buy box for '%s'", context);
+				detail = String.format("You won the buy box for '%s'", context);
 				notificationTag = 4;
 			break;
 			case BUYER_COMMUNICATION:
 				title = "New Message from Customer";
-				detail = String.format("New message from buyer %s", context);
+				detail = String.format("New message from %s", context);
 				notificationTag = 5;
 			break;
 			case CXM_WARNING:
@@ -81,7 +74,8 @@ public class SellerNotificationFactory
 				notificationTag = 8;
 			break;
 			case ITEM_SOLD:
-				title = String.format("You have a new sale for '%s'", context);
+				title = "Item Sold";
+				detail = String.format("You sold '%s'", context);
 				notificationTag = 9;
 			break;
 			case OUT_OF_STOCK:
@@ -92,15 +86,7 @@ public class SellerNotificationFactory
 			default:
 				throw new IllegalArgumentException("Unknown NotificationType");
 		}
-		
-		Log.i(TAG, String.format("Creating Notification of type %s with context %s", notificationType, context));
-		try{
-			Thread.sleep(MIN_PERIOD + random.nextInt(MAX_PERIOD - MIN_PERIOD));
-		}
-		catch(InterruptedException ex){
-			throw new RuntimeException(ex);
-		}
-	    
+
 		SellerNotification notification = new SellerNotification(++LAST_ID, imageId, notificationTag, title, detail, intent);
 		systemNotify(notification);
 		return notification;

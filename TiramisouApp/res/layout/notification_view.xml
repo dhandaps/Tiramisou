@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  android:background="@color/nope"
   android:layout_width="fill_parent"
-  android:layout_height="100px">
-    <ImageView android:layout_height="wrap_content" android:id="@+id/notificationImage" android:layout_width="wrap_content" android:src="@drawable/icon"></ImageView>
-    <TextView android:layout_width="wrap_content" android:id="@+id/notificationText" android:layout_height="wrap_content" android:text="TextView"></TextView>
-</LinearLayout>
+  android:paddingLeft="8dip"
+  android:paddingRight="8dip"
+  android:layout_height="wrap_content">
+    <ImageView 
+    	android:layout_height="wrap_content" 
+    	android:layout_alignParentTop="true"
+    	android:layout_alignParentLeft="true"
+    	android:id="@+id/notificationImage" 
+    	android:layout_width="wrap_content"
+    	android:src="@drawable/icon"></ImageView>
+    <TextView 
+    	android:layout_alignParentTop="true"
+    	android:layout_toRightOf="@+id/notificationImage"
+    	android:layout_width="fill_parent" 
+    	android:textColor="@color/light"
+    	android:textStyle="bold"
+    	android:typeface="sans"
+    	android:id="@+id/notificationText"
+    	android:layout_height="wrap_content" 
+    	android:text="REPLACEME"></TextView>
+    	
+    <TextView 
+    	android:layout_toRightOf="@+id/notificationImage"
+    	android:layout_below="@+id/notificationText"
+    	android:layout_width="fill_parent"
+    	android:textColor="@color/light"
+    	android:typeface="sans" 
+    	android:id="@+id/notificationDetail" 
+    	android:layout_height="wrap_content"
+    	android:text="Details Details.."></TextView>
+</RelativeLayout>

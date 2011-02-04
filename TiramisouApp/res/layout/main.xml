@@ -21,11 +21,12 @@
 
 <TextView 
 	android:text="@string/ship_label" 
-	android:textStyle="bold"
+	android:typeface="sans"
+	android:textSize="16sp"
 	android:textColor="@color/black"
 	android:layout_width="wrap_content" 
 	android:id="@+id/main_ShipLabel"
-	android:layout_marginLeft="20dip"
+	android:layout_marginLeft="15dip"
 	android:layout_height="wrap_content" 
 	android:layout_below="@+id/main_Ship" 
 	android:layout_alignLeft="@+id/main_Ship" 
@@ -56,11 +57,12 @@
 	android:id="@android:id/empty"
 	android:text="@string/no_notifications"
 	android:textColor="@color/light"
-	android:textSize="13pt"
+	android:typeface="sans"
+	android:textSize="22sp"
 	android:layout_below="@+id/main_Ship"
 	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
-	android:layout_marginLeft="45dip"
+	android:layout_marginLeft="80dip"
 	android:layout_marginTop="140dip"
 />
 
