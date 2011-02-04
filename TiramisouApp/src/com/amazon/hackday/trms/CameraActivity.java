@@ -14,14 +14,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 
 public class CameraActivity extends Activity {
 	private Preview preview; // ???
 	//private Camera camera;
 	private static byte[] picture;
 	Parameters cameraParams;
-	Button buttonClick;
+	View buttonClick;
 	int cameraLocked;
 	int defaultCamera;
 	int numberOfCameras;
@@ -39,7 +38,9 @@ public class CameraActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		Bundle bnd = this.getIntent().getExtras();
-		nextPage = bnd.getString("Next Page");
+		if(bnd != null)
+			nextPage = bnd.getString("Next Page");
+		
 		setContentView(R.layout.cameralayout);
 		
         // Hide the window title.
@@ -48,7 +49,7 @@ public class CameraActivity extends Activity {
         
         //mCamera=new Camera();
         
-        buttonClick = (Button) findViewById(R.id.camera_takePicture);
+        buttonClick = (View) findViewById(R.id.camera_takePicture);
         preview = (Preview) findViewById(R.id.preview); 
 		buttonClick.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {

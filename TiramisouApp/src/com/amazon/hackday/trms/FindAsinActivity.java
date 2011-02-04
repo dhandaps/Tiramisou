@@ -17,7 +17,7 @@ public class FindAsinActivity extends TabActivity {
 	    Intent intent;  // Reusable Intent for each tab
 
 	    // Create an Intent to launch an Activity for the tab (to be reused)
-	    intent = new Intent().setClass(this, CameraActivity.class);
+	    intent = new Intent(this, CameraActivity.class);
 
 	    // Initialize a TabSpec for each tab and add it to the TabHost
 	    spec = tabHost.newTabSpec("camera").setIndicator("Scan").setContent(intent);

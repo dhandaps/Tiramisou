@@ -8,13 +8,10 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 
 public class ShipConfirmActivity extends Activity {
-	byte[] picture;
 	Button confirmShipment;
 	
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		Bundle bnd = this.getIntent().getExtras();
-		picture = bnd.getByteArray("picture");
 		setContentView(R.layout.shipconfirmlayout);
 		
 		View retakePicture = (View) findViewById(R.id.ship_takePicture);
