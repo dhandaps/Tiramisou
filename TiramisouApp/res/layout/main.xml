@@ -11,7 +11,7 @@
 	android:scaleType="fitXY"
 	android:clickable="true"
 	android:text="@string/ship_label" 
-	android:id="@+drid/main_Ship" 
+	android:id="@+id/main_Ship" 
 	android:layout_alignParentLeft="true"
 	android:layout_marginLeft="20dip"
 	android:layout_marginTop="70dip"
@@ -22,13 +22,14 @@
 <TextView 
 	android:text="@string/ship_label" 
 	android:textStyle="bold"
+	android:textColor="@color/black"
 	android:layout_width="wrap_content" 
-	android:id="@+id/textView1"
+	android:id="@+id/main_ShipLabel"
 	android:layout_marginLeft="20dip"
 	android:layout_height="wrap_content" 
-	android:layout_below="@+drid/main_Ship" 
-	android:layout_alignLeft="@+drid/main_Ship" 
-	android:layout_alignRight="@+drid/main_Ship">
+	android:layout_below="@+id/main_Ship" 
+	android:layout_alignLeft="@+id/main_Ship" 
+	android:layout_alignRight="@+id/main_Ship">
 </TextView>
 	
 <Button 
