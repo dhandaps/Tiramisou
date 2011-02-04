@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="Take a picture of the bar code"
+		android:textSize="24sp" />
+
+<view 
+		class="com.amazon.hackday.trms.Preview"
+		android:id="@+id/preview"
+		android:layout_weight="1" android:layout_width="fill_parent"
+		android:layout_height="fill_parent">></view>
+<!--  	<FrameLayout android:id="@+id/preview"
+		android:layout_weight="1" android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+	</FrameLayout>-->
+
+	<Button android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/buttonClick"
+		android:text="Take picture" android:layout_gravity="center"></Button>
+</LinearLayout>

@@ -5,4 +5,6 @@
     <string name="list_label">List Items</string>
     <string name="ship_label">Ship &amp; Confirm</string>
     <string name="no_notifications">No Notifications</string>
+    <string name="takepicture">Take picture of bar code</string>
+    <string name="shipconfirm">Confirm shipment</string>
 </resources>
