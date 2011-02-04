@@ -29,6 +29,19 @@ public class FindAsinActivity extends Activity {
         	EditText text = (EditText)findViewById(R.id.EnterCode);
         	text.setText("018208254460");
         }
+		//First Extract the bundle from intent
+		Bundle bundle = getIntent().getExtras();
+		try {
+			//Next extract the values using the key as
+			String UPC = bundle.getString("UPC");
+			if (UPC != null) {
+	        	EditText text = (EditText)findViewById(R.id.EnterCode);
+	        	text.setText(UPC);				
+			}
+		}
+		catch (Exception e) {
+			
+		}
 
 		Button startover = (Button)findViewById(R.id.submit);
 		Intent intent = new Intent(this, DisplayFeeActivity.class);
@@ -44,7 +57,13 @@ public class FindAsinActivity extends Activity {
 		public void onClick(View view) {
 			FindAsinActivity.calledCamera = true;
 			Context context = view.getContext();
+			
 			Intent intent = new Intent(FindAsinActivity.this, CameraActivity.class);
+            //Next create the bundle and initialize it
+            Bundle bundle = new Bundle();
+            //Add the parameters to bundle as
+            bundle.putString("UPC", "018208254460");
+            intent.putExtras(bundle);			
 			try {
 				//Start next activity
 				context.startActivity(intent);
