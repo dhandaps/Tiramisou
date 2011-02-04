@@ -6,8 +6,6 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import lombok.SneakyThrows;
-
-import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.widget.ListAdapter;
@@ -18,7 +16,7 @@ import com.amazon.hackday.trms.model.SellerNotificationFactory;
 import com.amazon.hackday.trms.model.SellerNotificationType;
 import com.google.common.collect.Lists;
 
-public class MainMenu extends Activity {
+public class MainMenu extends ListActivity {
 	private Executor executor = Executors.newFixedThreadPool(1);
 	
     /** Called when the activity is first created. */
@@ -26,7 +24,7 @@ public class MainMenu extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);                   
-        //setListAdapter(createListAdapter());   
+        setListAdapter(createListAdapter());   
     }
     
     public ListAdapter createListAdapter(){
