@@ -216,8 +216,8 @@
 			android:src="@drawable/as_calculate"			
 			android:scaleType="fitXY"  
 			android:layout_alignParentBottom="true"
-			android:paddingLeft="15dip"
-			android:paddingRight="15dip"
+			android:paddingLeft="8dip"
+			android:paddingRight="8dip"
 		/>             
 		<ImageView 
 			android:layout_width="wrap_content"
@@ -227,8 +227,8 @@
 			android:scaleType="fitXY" 
 			android:layout_toRightOf="@id/amazonshipcalculate"
 			android:layout_alignParentBottom="true"
-			android:paddingLeft="15dip"
-			android:paddingRight="15dip"			
+			android:paddingLeft="8dip"
+			android:paddingRight="8dip"			
 		/>
 		<ImageView 
 			android:layout_width="wrap_content"
@@ -238,8 +238,8 @@
 			android:scaleType="fitXY" 
 			android:layout_toRightOf="@id/amazonshipcreateListing"
 			android:layout_alignParentBottom="true"
-			android:paddingLeft="15dip"
-			android:paddingRight="15dip"			
+			android:paddingLeft="8dip"
+			android:paddingRight="8dip"			
 		/> 					
 	</RelativeLayout>    
     
