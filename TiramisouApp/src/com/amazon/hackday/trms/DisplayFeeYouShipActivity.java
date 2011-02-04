@@ -19,7 +19,7 @@ public class DisplayFeeYouShipActivity extends Activity {
         setContentView(R.layout.display_fee_you_ship);
         
 		// start Over button
-		ImageView startover = (ImageView)findViewById(R.id.youshipstartOver);
+		ImageView startover = (ImageView)findViewById(R.id.youshipstartover);
 		startover.setOnClickListener(startOverClickListener);
 		
 		// create Listings Button
