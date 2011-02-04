@@ -8,16 +8,18 @@ import android.content.Intent;
 public class SellerNotification {
 	private long id;
 	private String title;
+	private String detail;
 	private int imageId;
-	private int notificationTag;
+	private int notificationId;
 	private Intent clickIntent;
 	private boolean acknowledged;
 	
-	public SellerNotification(long id, int imageId, int notificationTag, String title, Intent clickIntent)
+	public SellerNotification(long id, int imageId, int notificationId, String title, String detail, Intent clickIntent)
 	{
 		this.id = id;
 		this.imageId = imageId;
 		this.title = title;
+		this.detail = detail;
 		this.clickIntent = clickIntent;
 	}
 
@@ -29,12 +31,16 @@ public class SellerNotification {
 		return imageId;
 	}
 
+	public String  getDetail() {
+		return detail;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
 
-	public int getNotificationTag() {
-		return notificationTag;
+	public int getNotificationId() {
+		return notificationId;
 	}
 
 	public Intent getClickIntent() {

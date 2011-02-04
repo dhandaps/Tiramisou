@@ -15,7 +15,8 @@ import com.google.common.base.Preconditions;
 public class SellerNotificationFactory 
 {
 	private static final String TAG = "SellerNotificationFactory";
-	private static final int MAX_PERIOD = 800;
+	private static final int MAX_PERIOD = 10000;
+	private static final int MIN_PERIOD = 2000;
 	private static final Random random = new Random();	
 	private static long LAST_ID = 0;
 	
@@ -29,9 +30,10 @@ public class SellerNotificationFactory
 		this.context = Preconditions.checkNotNull(context);
 	}
 	
-	public SellerNotification createNotification(SellerNotificationType notificationType, Object context)
+	public SellerNotification createNotification(SellerNotificationType notificationType, String context)
 	{
 		String title = null;
+		String detail = null;
 		int imageId = R.drawable.message;
 		int notificationTag = 1;		
    		Intent intent = defaultIntent;
@@ -39,35 +41,43 @@ public class SellerNotificationFactory
 		switch(notificationType)
 		{
 			case AMAZON_COMMUNICATION:
-				title = String.format("New message from Amazon: %s", context);
+				title = "New Message from Amazon";
+				detail = context;
 				notificationTag = 1;
 			break;		
 			case BLOCKED:
-				title = String.format("You have been blocked from the marketplace for %s", context);
+				title = "You Have Been Blocked";
+				detail = String.format("You have been blocked from the marketplace for %s", context);
 				notificationTag = 2;
 			break;
 			case BUY_BOX_LOST:
-				title = String.format("You have lost the buy box for '%s'", context);
+				title = "Buy Box Lost";
+				detail = String.format("Lost the buy box for '%s'", context);
 				notificationTag = 3;
 			break;
 			case BUY_BOX_WON:
-				title = String.format("You have won the buy box for '%s'", context);
+				title = "Buy Box Won!";
+				detail = String.format("You have won the buy box for '%s'", context);
 				notificationTag = 4;
 			break;
 			case BUYER_COMMUNICATION:
-				title = String.format("New message from buyer %s", context);
+				title = "New Message from Customer";
+				detail = String.format("New message from buyer %s", context);
 				notificationTag = 5;
 			break;
 			case CXM_WARNING:
-				title = String.format("Metrics warning: %s", context);
+				title = "Metrics Warning"; 
+				detail = String.format("Metrics warning: %s", context);
 				notificationTag = 6;
 			break;
 			case DISBURSEMENT_RECEIVED:
-				title = String.format("You have received a disbursement for %s", context);
+				title = "Cash Moneys Received";
+				detail = String.format("You have received a disbursement for %s", context);
 				notificationTag = 7;
 			break;
 			case FEEDBACK_RECEIVED:
-				title = String.format("You have received new feedback from %s", context);
+				title = "Feedback Received";
+				detail = String.format("New feedback from %s", context);
 				notificationTag = 8;
 			break;
 			case ITEM_SOLD:
@@ -75,7 +85,8 @@ public class SellerNotificationFactory
 				notificationTag = 9;
 			break;
 			case OUT_OF_STOCK:
-				title = String.format("You are out of stock of '%s'", context);
+				title = "Item out of Stock";
+				detail = String.format("You are out of stock of '%s'", context);
 				notificationTag = 10;
 			break;
 			default:
@@ -84,13 +95,13 @@ public class SellerNotificationFactory
 		
 		Log.i(TAG, String.format("Creating Notification of type %s with context %s", notificationType, context));
 		try{
-			Thread.sleep(100 + random.nextInt(MAX_PERIOD));
+			Thread.sleep(MIN_PERIOD + random.nextInt(MAX_PERIOD - MIN_PERIOD));
 		}
 		catch(InterruptedException ex){
 			throw new RuntimeException(ex);
 		}
 	    
-		SellerNotification notification = new SellerNotification(++LAST_ID, imageId, notificationTag, title, intent);
+		SellerNotification notification = new SellerNotification(++LAST_ID, imageId, notificationTag, title, detail, intent);
 		systemNotify(notification);
 		return notification;
 	}
@@ -106,27 +117,8 @@ public class SellerNotificationFactory
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
 		CharSequence title = sellerNotification.getTitle();
-		notification.setLatestEventInfo(context, title, title, pendingIntent);
-		notificationManager.notify(sellerNotification.getNotificationTag(), notification);
+		CharSequence detail = sellerNotification.getDetail();
+		notification.setLatestEventInfo(context, title, detail, pendingIntent);
+		notificationManager.notify(sellerNotification.getTitle(), sellerNotification.getNotificationId(), notification);
 	}
-	
-	/***
-Context context = getApplicationContext();
-CharSequence contentTitle = "My notification";
-CharSequence contentText = "Hello World!";
-Intent notificationIntent = new Intent(this, MyClass.class);
-PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-
-Context context = getApplicationContext();
-CharSequence contentTitle = "My notification";
-CharSequence contentText = "Hello World!";
-Intent notificationIntent = new Intent(this, MyClass.class);
-PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-
-notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
-Pass the Notification to the NotificationManager:
-private static final int HELLO_ID = 1;
-
-mNotificationManager.notify(HELLO_ID, notification);
-	 */
 }
