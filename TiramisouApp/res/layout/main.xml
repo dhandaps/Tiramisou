@@ -6,5 +6,5 @@
 >
 <ListView android:id="@+id/main_NotificationList" android:layout_height="510px" android:layout_width="420px" android:layout_x="19dip" android:layout_y="126dip" android:cacheColorHint="#00000000"/>
 <Button android:text="Ship" android:id="@+id/main_Ship" android:layout_height="100px" android:layout_width="200px" android:layout_x="19dip" android:layout_y="46dip"></Button>
-<Button android:text="Notifications" android:id="@+id/main_Notifications" android:layout_height="100px" android:layout_width="200px" android:layout_x="166dip" android:layout_y="46dip"></Button>
+<Button android:text="Notifications" android:id="@+id/list" android:layout_height="100px" android:layout_width="200px" android:layout_x="166dip" android:layout_y="46dip"></Button>
 </AbsoluteLayout>

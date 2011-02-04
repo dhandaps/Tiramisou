@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amazon.hackday.trms.R;
@@ -30,8 +31,10 @@ public class SellerNotificationAdapter extends ArrayAdapter<SellerNotification> 
 		
         if (notification != null) {
                 TextView text = (TextView) view.findViewById(R.id.notificationText);
-                if (text != null) 
-                      text.setText(notification.getTitle());                
+                ImageView image = (ImageView) view.findViewById(R.id.notificationImage);
+                
+                text.setText(notification.getTitle());
+                image.setImageResource(notification.getImageId());
         }
         
         return view;

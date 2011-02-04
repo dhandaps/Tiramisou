@@ -1,13 +1,26 @@
 package com.amazon.hackday.trms.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import android.content.Intent;
 
 /**
- * A data-holder class for binding notifications with
+ * A data-holder class for binding notifications with.
  */
-@Data public class SellerNotification {
-	private long id;
-	private boolean acknowledged;
-	private String title;
-	private int imageId;
+@ToString(of={"id", "title"})
+public class SellerNotification {
+	@Getter private long id;
+	@Getter private String title;
+	@Getter private int imageId;
+	@Getter private Intent clickIntent;
+	@Setter @Getter private boolean acknowledged;
+	
+	public SellerNotification(long id, int imageId, String title, Intent clickIntent)
+	{
+		this.id = id;
+		this.imageId = imageId;
+		this.title = title;
+		this.clickIntent = clickIntent;
+	}
 }

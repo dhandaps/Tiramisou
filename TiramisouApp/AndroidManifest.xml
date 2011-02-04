@@ -15,4 +15,5 @@
         </activity>
 
     </application>
+    <uses-library android:name="android.test.runner" />    
 </manifest>

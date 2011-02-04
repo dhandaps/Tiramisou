@@ -1,0 +1,15 @@
+package com.amazon.hackday.trms.model;
+
+public enum SellerNotificationType 
+{
+	ITEM_SOLD,
+	FEEDBACK_RECEIVED,
+	DISBURSEMENT_RECEIVED,
+	BUY_BOX_LOST,
+	BUY_BOX_WON,
+	BUYER_COMMUNICATION,
+	AMAZON_COMMUNICATION,
+	CXM_WARNING,
+	BLOCKED,
+	OUT_OF_STOCK
+}
