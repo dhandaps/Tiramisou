@@ -153,6 +153,19 @@
 					  android:textStyle="bold"				  
             />	 
     	</TableRow> 
+    	<TableRow android:layout_margin="50dp" >
+    		<Button 
+			android:id="@+id/submit"	
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:textSize="10px"
+			android:textStyle="bold"
+			android:text="Submit" 
+			android:height="10px"
+			android:layout_alignParentRight="true"
+			android:layout_marginLeft="10dip"			
+			/>     	
+    	</TableRow>   
     	<TableRow android:layout_margin="1dp" >
     	</TableRow>  
    	</TableLayout>
