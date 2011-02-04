@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TRMiSu</string>
+    <string name="news_feed_label">News Feed</string>
+    <string name="list_label">List Items</string>
+    <string name="ship_label">Ship &amp; Confirm</string>
 </resources>
