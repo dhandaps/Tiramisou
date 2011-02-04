@@ -4,4 +4,6 @@
 	<color name="red">#FFE35900</color>
     <color name="dark">#ff808080</color>
     <color name="nope">#00000000</color>
+    <color name="listingHeader">#3f2a29</color>
+    <color name="white">#FFFFFFFF</color>
 </resources>

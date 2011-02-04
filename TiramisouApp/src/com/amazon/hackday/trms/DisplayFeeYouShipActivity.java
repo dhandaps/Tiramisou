@@ -67,7 +67,7 @@ public class DisplayFeeYouShipActivity extends Activity {
 		
 		public void onClick(View view) {
 			Context context = view.getContext();
-			Intent intent = new Intent(DisplayFeeYouShipActivity.this, MainMenu.class);
+			Intent intent = new Intent(DisplayFeeYouShipActivity.this, FindAsinActivity.class);
 			try {
 				//Start next activity
 				context.startActivity(intent);

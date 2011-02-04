@@ -180,7 +180,7 @@
 		<ImageView 
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" 
-			android:id="@+id/youshipstartOver"
+			android:id="@+id/youshipstartover"
 			android:src="@drawable/ys_startover"			
 			android:scaleType="fitXY" 
 			android:layout_toRightOf="@id/youshipcreateListing"
@@ -189,5 +189,4 @@
 			android:paddingRight="15dip"			
 		/> 					
 	</RelativeLayout>    
-    
 </LinearLayout>

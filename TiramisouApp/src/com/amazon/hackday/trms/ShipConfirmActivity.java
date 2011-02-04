@@ -17,7 +17,7 @@ public class ShipConfirmActivity extends Activity {
 		picture = bnd.getByteArray("picture");
 		setContentView(R.layout.shipconfirmlayout);
 		
-		Button retakePicture = (Button) findViewById(R.id.retakepicture);
+		View retakePicture = (View) findViewById(R.id.ship_takePicture);
 		retakePicture.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				finish();

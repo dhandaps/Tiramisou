@@ -1,61 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/background_orange_floral"
     >
-       <TextView android:text="Confirm shipment" android:id="@+id/textView1" android:textColor="#000000" android:layout_height="wrap_content" android:layout_width="fill_parent"></TextView>
-
-	<LinearLayout android:id="@+id/linearLayout1" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50px">
+   <TextView
+		    	android:layout_marginTop="20dip"
+		     	android:layout_alignParentTop="true" 
+		    	android:text="Confirm Shipment"
+		    	android:textSize="25sp"
+		    	android:textStyle="bold"
+		    	android:layout_marginLeft="15dip"
+		    	android:textColor="@color/white"
+		    	android:id="@+id/textView1" 
+		    	android:layout_height="wrap_content" 
+		    	android:layout_width="wrap_content"/>
+    
+	<LinearLayout 
+		android:id="@+id/linearLayout1" 
+		android:layout_marginTop="60dip"
+		android:layout_below="@+id/textView1"
+		android:orientation="horizontal" 
+		android:layout_width="match_parent" 
+		android:layout_height="50dip" >
        <TextView
         android:text="Carrier"
-        android:textSize="10pt"
-        android:layout_width="fill_parent"
+        android:textSize="18sp"
+        android:textColor="@color/light"
+        android:textStyle="bold"
+        android:layout_width="230dip"        
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip" 
         android:layout_weight="1"/>
        <EditText
         android:id="@+id/carrier"
         android:text="UPS"
-        android:textSize="10pt"
+        android:textSize="10sp"
         android:layout_width="fill_parent"
+        android:layout_marginRight="10dip" 
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
     </LinearLayout>
     
-<!--     <LinearLayout android:id="@+id/linearLayout2" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="75px"> -->
-    <TextView
-        android:text="Tracking number"
-        android:textSize="10pt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <EditText
-        android:id="@+id/trackingnumber"
-        android:text="A1234567890B"
-        android:textSize="10pt"
-        android:layout_width="fill_parent"
-        android:layout_height="55px"
-        android:layout_weight="1"/>
-    <!--</LinearLayout>-->
+    <LinearLayout android:id="@+id/linearLayout2" android:layout_below="@+id/linearLayout1" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50dip" android:layout_marginTop="35dip">
+	    <TextView
+	        android:text="Tracking #"
+	        android:textSize="18sp"
+	        android:textStyle="bold"
+	        android:textColor="@color/light"
+	        android:layout_marginLeft="10dip"
+	        android:layout_width="230dip"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"/>
+	    <EditText
+	        android:id="@+id/trackingnumber"
+	        android:text="A1234567890B"
+	        android:textSize="10sp"
+	        android:layout_marginRight="10dip" 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"/>
+     </LinearLayout>
+
+	<LinearLayout android_id="@+id/linearLayout3" android:layout_below="@+id/linearLayout2" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50dip" android:layout_marginTop="35dip">
+	    <TextView
+	        android:text="Order"
+	        android:textSize="18sp"
+	        android:textColor="@color/light"
+	        android:textStyle="bold"
+	        android:layout_width="230dip"        
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dip"
+	        android:layout_weight="1"/>
+	    <EditText
+	        android:id="@+id/order"
+	        android:text="12345"
+	        android:textSize="10sp"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="10dip"
+	        android:layout_weight="1"/>
+    </LinearLayout>
     
-    <!--<LinearLayout android:id="@+id/linearLayout3" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50px">-->
-    <TextView
-        android:text="Order"
-        android:textSize="10pt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <EditText
-        android:id="@+id/order"
-        android:text="12345"
-        android:textSize="10pt"
-        android:layout_width="fill_parent"
-        android:layout_height="55px"
-        android:layout_weight="1"/>
-    <!--</LinearLayout>-->
-    
-    <LinearLayout android:id="@+id/linearLayout4" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="50px">
-        <Button android:text="Retake picture" android:layout_height="50px" android:textSize="13px" android:id="@+id/retakepicture" android:layout_width="120px"></Button>
-        <Button android:text="Confirm" android:layout_height="50px" android:textSize="13px" android:id="@+id/confirmshipment" android:layout_width="120px"></Button>
+    <LinearLayout android:layout_alignParentBottom="true" android:id="@+id/linearLayout4" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="60dip" android:layout_marginBottom="15dip">
+    	<ImageView 
+     		android:id="@+id/ship_takePicture" 		
+			android:src="@drawable/camera_icon"
+			android:scaleType="fitXY"
+			android:layout_marginLeft="10dip" 
+			android:layout_marginTop="5dip"
+			android:layout_height="45dip"
+			android:layout_width="45dip"/>
+        <Button 
+        	android:text="Confirm" 
+        	android:layout_height="50dip" 
+        	android:layout_marginTop="5dip"
+        	android:textSize="13sp" 
+        	android:id="@+id/confirmshipment"
+        	android:layout_marginLeft="10dip" 
+        	android:layout_marginRight="10dip" 
+        	android:layout_width="fill_parent"></Button>
     </LinearLayout>  
-</LinearLayout>
+</RelativeLayout>
