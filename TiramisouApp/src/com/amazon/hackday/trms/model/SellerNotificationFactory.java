@@ -41,16 +41,19 @@ public class SellerNotificationFactory
 			case BLOCKED:
 				title = "You Have Been Blocked";
 				detail = String.format("You have been blocked from the marketplace for %s", context);
+				imageId = R.drawable.thumbsdown;
 				notificationTag = 2;
 			break;
 			case BUY_BOX_LOST:
 				title = "Buy Box Lost";
 				detail = String.format("Lost the buy box for '%s'", context);
+				imageId = R.drawable.thumbsdown;
 				notificationTag = 3;
 			break;
 			case BUY_BOX_WON:
 				title = "Buy Box Won!";
 				detail = String.format("You won the buy box for '%s'", context);
+				imageId = R.drawable.thumbsup;
 				notificationTag = 4;
 			break;
 			case BUYER_COMMUNICATION:
@@ -61,11 +64,13 @@ public class SellerNotificationFactory
 			case CXM_WARNING:
 				title = "Metrics Warning"; 
 				detail = String.format("Metrics warning: %s", context);
+				imageId = R.drawable.thumbsdown;
 				notificationTag = 6;
 			break;
 			case DISBURSEMENT_RECEIVED:
 				title = "Cash Moneys Received";
 				detail = String.format("You have received a disbursement for %s", context);
+				imageId = R.drawable.thumbsup;
 				notificationTag = 7;
 			break;
 			case FEEDBACK_RECEIVED:
@@ -76,11 +81,13 @@ public class SellerNotificationFactory
 			case ITEM_SOLD:
 				title = "Item Sold";
 				detail = String.format("You sold '%s'", context);
+				imageId = R.drawable.thumbsup;
 				notificationTag = 9;
 			break;
 			case OUT_OF_STOCK:
 				title = "Item out of Stock";
 				detail = String.format("You are out of stock of '%s'", context);
+				imageId = R.drawable.thumbsdown;
 				notificationTag = 10;
 			break;
 			default:
@@ -94,10 +101,9 @@ public class SellerNotificationFactory
 	
 	private void systemNotify(SellerNotification sellerNotification)
 	{
-		int icon = R.drawable.message;
 		CharSequence text = sellerNotification.getTitle();
 		long when = System.currentTimeMillis();
-		Notification notification = new Notification(icon, text, when);
+		Notification notification = new Notification(sellerNotification.getImageId(), text, when);
 
 		Intent intent = sellerNotification.getClickIntent();
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
