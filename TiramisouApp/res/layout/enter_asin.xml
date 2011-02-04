@@ -2,12 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 			android:layout_width="fill_parent" 
             android:layout_height="fill_parent" 
-            android:background="#FFFFFF"
+            android:background="#C0C0C0"
     >
 	<TextView 
 		android:text="Find Product"  
 		android:layout_width="wrap_content" 
-		android:textColor="#3f2a29" 
+		android:textColor="#000046" 
 		android:layout_height="wrap_content" 
 		android:textSize="15px" 
 		android:textStyle="bold"
@@ -17,7 +17,7 @@
 	<TextView
 		android:text="Enter UPC/ISBN Code"  
 		android:layout_width="wrap_content" 
-		android:textColor="#3f2a29" 
+		android:textColor="#000046" 
 		android:layout_height="wrap_content" 
 		android:textSize="10px" 
 		android:textStyle="bold"
