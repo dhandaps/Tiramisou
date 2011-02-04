@@ -29,6 +29,7 @@ public class FindAsinActivity extends Activity {
         	EditText text = (EditText)findViewById(R.id.EnterCode);
         	text.setText("018208254460");
         }
+
 		//First Extract the bundle from intent
 		Bundle bundle = getIntent().getExtras();
 		try {
