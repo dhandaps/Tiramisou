@@ -17,9 +17,9 @@ import android.util.*;
 * to the surface. We need to center the SurfaceView because not all devices have cameras that
 * support preview sizes at the same aspect ratio as the device's display.
 */
-class Preview extends SurfaceView implements SurfaceHolder.Callback {
+public class Preview extends SurfaceView implements SurfaceHolder.Callback {
     SurfaceHolder mHolder;
-    Camera mCamera;
+    public Camera mCamera;
 
     public Preview(Context context) {
         super(context);
