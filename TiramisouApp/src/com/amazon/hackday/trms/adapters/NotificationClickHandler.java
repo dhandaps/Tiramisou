@@ -15,6 +15,8 @@ public class NotificationClickHandler implements OnClickListener
 	}
 	
 	public void onClick(View v)	{
-		this.context.startActivity(intent);
+		if(intent != null) {
+			this.context.startActivity(intent);
+		}
 	}		
 }

@@ -15,10 +15,8 @@ public class SellerNotificationFactory
 	
 	private final NotificationManager notificationManager;
 	private final Context context;
-	private final Intent defaultIntent;
 	
-	public SellerNotificationFactory(NotificationManager notificationManager, Context context, Intent defaultIntent){
-		this.defaultIntent = Preconditions.checkNotNull(defaultIntent, "Default Intent must not be null");
+	public SellerNotificationFactory(NotificationManager notificationManager, Context context) {
 		this.notificationManager = Preconditions.checkNotNull(notificationManager, "Notification Manager must not be null");
 		this.context = Preconditions.checkNotNull(context, "Context must not be null");
 	}
@@ -29,7 +27,7 @@ public class SellerNotificationFactory
 		String detail = null;
 		int imageId = R.drawable.message;
 		int notificationTag = 1;		
-   		Intent intent = defaultIntent;
+   		Intent intent = null;
 
 		switch(notificationType)
 		{
@@ -82,6 +80,7 @@ public class SellerNotificationFactory
 				title = "Item Sold";
 				detail = String.format("You sold '%s'", context);
 				imageId = R.drawable.thumbsup;
+				//intent = new Intent(context, ShipConfirmActivity.class);
 				notificationTag = 9;
 			break;
 			case OUT_OF_STOCK:

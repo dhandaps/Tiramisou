@@ -1,16 +1,20 @@
 package com.amazon.hackday.trms;
 
-import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import android.app.Activity;
-import android.content.*;
-import android.os.*;
-import android.view.*;
-import android.util.*;
-import java.io.*;
+import android.content.Intent;
 import android.hardware.Camera;
-import android.hardware.Camera.*;
-import android.widget.*;
+import android.hardware.Camera.Parameters;
+import android.hardware.Camera.PictureCallback;
+import android.hardware.Camera.ShutterCallback;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 
 public class CameraActivity extends Activity {
 	private Preview preview; // ???

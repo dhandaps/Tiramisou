@@ -6,7 +6,6 @@ import java.util.concurrent.Executors;
 import android.app.ListActivity;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -20,7 +19,6 @@ public class MainMenu extends ListActivity {
 	private static final String TAG = "MainMenuActivity"; 
 	private final Executor executor = Executors.newFixedThreadPool(1);
 	private SellerNotificationAdapter adapter;
-	private Intent defaultIntent;
 	private SellerNotificationFactory factory;
 	
     /** Called when the activity is first created. */
@@ -29,8 +27,7 @@ public class MainMenu extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        this.defaultIntent = new Intent(this, MainMenu.class);
-        this.factory = new SellerNotificationFactory(getNotificationService(), this, defaultIntent);
+        this.factory = new SellerNotificationFactory(getNotificationService(), this);
         this.adapter = new SellerNotificationAdapter(this, R.layout.notification_view);
 
         spawnNotifications();
@@ -40,7 +37,6 @@ public class MainMenu extends ListActivity {
     private void spawnNotifications(){
         Runnable populateNotifications = new Runnable(){
         	public void run(){
-        		int i = 0;
         		runOnUiThread(new UpdateNotificationTask(SellerNotificationType.AMAZON_COMMUNICATION, "Your credit card is invalid, please update it"));
         		Sleeper.sleep();
 		    	runOnUiThread(new UpdateNotificationTask(SellerNotificationType.BLOCKED, "having a high defect rate"));
